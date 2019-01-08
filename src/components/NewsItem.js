@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import FolderIcon from '@material-ui/icons/Folder';
 
 class NewsItem extends Component {
 
@@ -23,7 +27,12 @@ class NewsItem extends Component {
   render() {
 
     return (
-      <li>{this.state.item.title}</li>
+      <ListItem>
+        <ListItemIcon>
+          <FolderIcon />
+        </ListItemIcon>
+        <ListItemText primary={this.state.item.title}/>
+      </ListItem>
     );
   }
 }

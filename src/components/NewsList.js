@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import NewsItem from './NewsItem';
+import List from '@material-ui/core/List';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 class NewsList extends Component {
 
@@ -26,9 +29,16 @@ class NewsList extends Component {
     const items = this.state.storyList.map(item => <NewsItem key={item} code={item}/>);
 
     return (
-      <ul>
-        {items}
-      </ul>
+      <Grid item xs={12}>
+        <Typography variant="h6">
+          Latest posts
+        </Typography>
+        <div >
+          <List>
+            {items}
+          </List>
+        </div>
+      </Grid>
     );
   }
 }
