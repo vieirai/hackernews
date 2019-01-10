@@ -17,7 +17,6 @@ class NewsList extends Component {
   }
 
   componentDidMount() {
-    this.items = [];
     axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
       .then(response => {
         this.setState({storyList: response.data.slice(0, 50)});
